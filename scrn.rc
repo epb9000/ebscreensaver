@@ -1,0 +1,58 @@
+#include <scrnsave.h>
+#include <windows.h>
+#define COL 7
+#define photo 80
+#define flash 81
+#define SEMIMASK 9
+#define SuperBlack 556
+#define BG1 900
+#define BG2 901
+#define BG3 902
+#define BG4 903
+#define BG5 904
+#define BG6 905
+#define BG7 906
+#define BG8 907
+#define MUSAK 1000
+
+COL BITMAP "sprites.bmp"
+photo BITMAP "photoguy.bmp"
+BG1 BITMAP "1.bmp"
+BG2 BITMAP "2.bmp"
+BG3 BITMAP "3.bmp"
+BG4 BITMAP "4.bmp"
+BG5 BITMAP "5.bmp"
+BG6 BITMAP "6.bmp"
+BG7 BITMAP "7.bmp"
+BG8 BITMAP "8.bmp"
+flash BITMAP "Flash256.bmp"
+SEMIMASK BITMAP "Semimask.bmp"
+SuperBlack BITMAP "black.bmp"
+MUSAK WAVE "battle01.it"
+ID_APP ICON "a.ico"
+
+STRINGTABLE
+BEGIN
+ IDS_DESCRIPTION "EarthBound ScreenSaver"
+ idsScreenSaver "EarthBound Screensaver"
+ idsNoHelpMemory "This Screensaver needs at least 7.2MB of free physical memory"
+END
+
+DLG_SCRNSAVECONFIGURE DIALOG 6, 15, 205, 75 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU CAPTION "EBScreenSaver" FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Save", IDOK, 16, 35, 50, 14
+    PUSHBUTTON      "Close", IDCANCEL, 80, 35, 50, 14
+    PUSHBUTTON      "A", 900, 191, 61, 14, 14
+    AUTOCHECKBOX    "Sprites", 501, 9, 6, 34, 10
+    AUTOCHECKBOX    "FullScreen Backgrounds", 502, 54, 19, 93, 10
+    AUTOCHECKBOX    "Cropping (Effects FullScreen Graphics)", 504, 54, 6, 138, 10
+    LTEXT           "EvilPuffBall", 78, 144, 38, 40, 10
+    AUTOCHECKBOX    "Music", 503, 9, 19, 34, 10
+    EDITTEXT         600, 8, 49, 55, 15, ES_NUMBER | ES_AUTOHSCROLL
+    LTEXT           "Delay (lower=Screensaver faster, higher=slower)", 79, 68, 55, 100,20
+    AUTOCHECKBOX    "PhotoGuy", 505, 8, 64, 55, 10
+    AUTOCHECKBOX    "Low-Op Mode", 506, 136, 47, 60, 10
+    AUTOCHECKBOX    "No Backgrounds", 507, 136,28,66,10
+END
+
+
